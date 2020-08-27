@@ -9,7 +9,7 @@ $.widget( "ui.odometer", {
     this.columns = this._addLists( this.element, this.options.columns );
     if( this.options.prefix ) {
       var prefix = $("<span/>").text( this.options.prefix ).addClass( "prefix" );
-      $(this.element).append( prefix );
+      $(this.element).parent().append( prefix );
     }
 
     this.value( this.options.initialValue );
