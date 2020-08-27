@@ -24,7 +24,7 @@
 <div id="form">
   <form class="setup ticker" accept-charset="utf-8" action="#">
     <dl>
-      <dt><label for="attendees">Number of Attendees:</label></dt>
+      <dt><label for="attendees">Enter number:</label></dt>
       <dd>
         <input id="attendees"
                class="watermark"
@@ -34,26 +34,21 @@
       </dd>
 
       <dt>
-        <label for="hourly_rate">Average Hourly Rate:</label>
-        <p class="small">
-          Be sure to include overhead costs like facilities and benefits.
-        </p>
+        <label for="hourly_rate">Rate:</label>
       </dt>
       <dd>
         <select name="units" tabindex="3">
-          <option value="$" selected="selected">$</option>
-          <option value="pound">&pound;</option>
+          <option value="pound" selected="selected">&pound;</option>
+          <option value="$">$</option>
           <option value="euro">&euro;</option>
-          <option value="yen">&yen;</option>
-          <option value="Kr">Kr</option>
         </select>
         <input id="hourly_rate"
                class="watermark" type="text"
                tabindex="2"
-               name="hourly_rate" value="" title="guess (200?)" />
+               name="hourly_rate" value="" />
       </dd>
 
-      <dt><label for="start_time">The Meeting started at:</label></dt>
+      <dt><label for="start_time">Start at:</label></dt>
       <dd>
         <input id="start_time" type="text"
                name="start_time" value="" tabindex="4"/>
@@ -63,41 +58,16 @@
     <p><input type="submit" value="Start &rarr;"></p>
   </form>
 
-  <div class="notes">
-    <p>Written by Toby Tripp, Lydia Tripp, and <a href="http://www.royhere.com">Roy Kolak</a>.</p>
-    <p>Fork this project
-      on <a href="http://github.com/tobytripp/meeting-ticker/">GitHub</a>.</p>
-    <p>Report any issues or ideas to the
-      <a href="https://github.com/tobytripp/meeting-ticker/issues">issue tracker</a>.</p>
-    <p class="small">If this works in Internet Explorer, it is purely by accident.</p>
-  </div>
-
 </div>
 
 <div id="display">
-  <h1>This Meeting Has Cost</h1>
+  <h1>The cost of watering a garden/field during rain:</h1>
   <div class="odometer"></div>
   <p id="started_at" class="small"></p>
   <form class="stop" action="#">
-    <input type="submit" value="stop the bleeding">
+    <input type="submit" value="stop the tap">
   </form>
 </div>
 
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-19174339-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script');
-    ga.type = 'text/javascript';
-    ga.async = true;
-
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-  $( function() { $(".ticker").meetingTicker(); });
-</script>
 </body>
 </html>
